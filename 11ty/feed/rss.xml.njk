@@ -1,0 +1,86 @@
+---
+permalink: rss.xml
+metadata:
+  title: Rehydrate
+  subtitle: A podcast where we read books together at a TV series-like pace. Books include "The Three-Body Problem" by Liu Cixin, "The Long Way to a Small, Angry Planet" by Becky Chambers, and "Foundation" by Isaac Asimov
+  url: https://rehydrate.space
+  author:
+    name: Jim, Dan, Tim, and Amin
+    email: rehydrate@fastmail.com
+  description: A podcast where we read books together at a TV series-like pace. Books include "The Three-Body Problem" by Liu Cixin, "The Long Way to a Small, Angry Planet" by Becky Chambers, and "Foundation" by Isaac Asimov
+  imageURL: https://rehydrate.space/media/rehydrate-logo.jpg
+  feed:
+    filename: rss.xml
+    path: rss.xml
+    url: https://rehydrate.space/rss.xml
+    id: https://rehydrate.space/
+---
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:anchor="https://anchor.fm/xmlns" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0">
+  <channel>
+    <title><![CDATA[{{ metadata.title }}]]></title>
+    <itunes:subtitle><![CDATA[{{ metadata.subtitle }}]]></itunes:subtitle>
+    <description><![CDATA[{{ metadata.description }}]]></description>
+    <googleplay:block>yes</googleplay:block>
+		<link>{{ metadata.url }}</link>
+		<image>
+			<url>{{ metadata.imageURL }}</url>
+      <title>{{ metadata.title }}</title>
+      <link>{{ metadata.url }}</link>
+		</image>
+		<generator>Smidgeo Podcasts</generator>
+    <lastBuildDate>{{ collections.episodes | getLastBuildDate | rfc822Date }}</lastBuildDate>
+		<atom:link href="{{ metadata.feed.url}}" rel="self" type="application/rss+xml"/>
+		<author><![CDATA[{{ metadata.author.name }}]]></author>
+		<copyright><![CDATA[{{ metadata.author.name }}]]></copyright>
+		<language><![CDATA[en]]></language>
+		<itunes:author>{{ metadata.author.name }}</itunes:author>
+		<itunes:summary>{{ metadata.description }}</itunes:summary>
+		<itunes:type>episodic</itunes:type>
+		<itunes:owner>
+			<itunes:name>{{ metadata.author.name }}</itunes:name>
+			<itunes:email>{{ metadata.author.email }}</itunes:email>
+		</itunes:owner>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:category text="Arts">
+      <itunes:category text="Books"/>
+		</itunes:category>
+    <itunes:category text="Fiction">
+      <itunes:category text="Science Fiction"/>
+		</itunes:category>
+    <itunes:category text="TV &amp; Film">
+      <itunes:category text="TV Reviews"/>
+		</itunes:category>
+		<itunes:image href="{{ metadata.imageURL }}" />
+    {%- for episode in collections.episodes -%}
+      {%- set src = episode.data.stuff -%}
+      {%- set filename = episode.data.stuff | getEpisodeFilename -%}
+      {%- set fileURL -%}{{ metadata.url }}/episodes/{{ filename }}{%- endset -%}
+      {%- set pageURL -%}{{ metadata.url }}/episodes/{{ src.slug }}{%- endset -%}
+      {%- set filePath -%}episodes/{{ filename }}{%- endset -%}
+      {%- set imageURL -%}{{ metadata.url }}/media/{{ src.imageFilename }}{%- endset -%}
+      <item>
+        <title><![CDATA[{{ src | getEpisodeTitle | safe }}]]></title>
+        <itunes:title><![CDATA[{{ src | getEpisodeTitle | safe }}]]></itunes:title>
+        <itunes:subtitle><![CDATA[{{ src | getReadingListEntry(readingList) | getEpisodeSubtitle | safe }}]]></itunes:subtitle>
+        <description><![CDATA[
+            <a href="{{ pageURL }}">Episode Page</a>
+            {%- include 'findings.njk' -%}
+            {%- include 'contact.njk' -%}
+        ]]></description>
+        <link href="{{ pageURL }}">{{ pageURL }}</link>
+        <guid isPermaLink="false">{{ fileURL }}</guid>
+        <dc:creator><![CDATA[{{ metadata.author.name }}]]></dc:creator>
+        <pubDate>{{ src.date | rfc822Date }}</pubDate>
+        <enclosure type="audio/mpeg" url="{{ fileURL }}" length="{{ filePath | length }}"/>
+        <itunes:summary>{{ src.summary }}</itunes:summary>
+        <itunes:author>{{ metadata.author.name }}</itunes:author>
+        <itunes:explicit>No</itunes:explicit>
+        <itunes:duration>{{ src.seconds }}</itunes:duration>
+        <itunes:image href="{{ imageURL }}"/>
+        <itunes:season>{{ src.season }}</itunes:season>
+        <itunes:episode>{{ src.number }}</itunes:episode>
+        <itunes:episodeType>full</itunes:episodeType>
+      </item>
+    {%- endfor -%}
+	</channel>
+</rss>

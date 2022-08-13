@@ -1,2 +1,1 @@
-# ux-at-your-leisure-podcast
-RSS feed for the UX At Your Leisure podcast
+Thanks to kkgthb for the [11ty podcast starter](https://github.com/kkgthb/web-site-11ty-06-podcast)!

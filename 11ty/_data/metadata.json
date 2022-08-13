@@ -1,0 +1,23 @@
+{
+  "title": "UX At Your Leisure Podcast",
+  "url": "https://example.com/",
+  "language": "en",
+  "description": "A UX design podcast that meets you wherever you are.",
+  "podcast_categories": "Design, UX, Tech, Careers",
+  "square_cover_image_relative_url": "/static/img/tbd.png",
+  "feed": {
+    "subtitle": "A UX design podcast that meets you wherever you are.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://example.com/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://example.com/feed/feed.json"
+  },
+  "author": {
+    "name": "Katie Langerman, Lara Greenburg, Olga Perfilieva",
+    "email": "youremailaddress@example.com",
+    "url": "https://example.com/about-me/"
+  }
+}

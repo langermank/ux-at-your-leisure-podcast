@@ -1,0 +1,22 @@
+{
+  "name": "11ty-podcast-starter",
+  "version": "0.0.1",
+  "description": "",
+  "main": ".eleventy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx eleventy",
+    "dev": "npx eleventy --watch --serve",
+    "develop": "npx eleventy --watch --serve",
+    "now-build": "npm run build",
+    "debug": "DEBUG=* npx eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": ">=0.11.0",
+    "eleventy-xml-plugin": ">=0.1.0",
+    "js-yaml": ">=4.0.0",
+    "markdown-it": ">=12.0.4",
+    "music-metadata": ">=7.8.1",
+    "rss": ">=1.2.2"
+  }
+}
