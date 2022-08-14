@@ -5,7 +5,7 @@ module.exports = {
   subtitle:
     "A UX design podcast that meets you wherever you are.",
   lang: "en-us",
-  author: "Katie Langerman, Lara Greenburg, Olga Perfilieva",
+  author: "Katie Langerman, Lara Greenberg, Olga Perfilieva",
   url: "https://uxatyourleisure.com",
   email: "hello@uxatyourleisure.com",
   twitter_username: "UXAtYourLeisure",
