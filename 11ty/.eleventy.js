@@ -18,8 +18,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addDataExtension('yaml', contents => yaml.parse(contents));
 
     eleventyConfig.addCollection('episodes',
-    curry(addFilteredCollection)(['episodes/*.md'], compareDatesDesc)
-  );
+    curry(addFilteredCollection)(['episodes/*.md'], compareDatesDesc));
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
