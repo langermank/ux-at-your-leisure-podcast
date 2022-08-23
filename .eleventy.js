@@ -9,6 +9,13 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 
 module.exports = (eleventyConfig) => {
+
+      // Make Liquid capable of rendering "partials"
+  eleventyConfig.setLiquidOptions({
+    dynamicPartials: true,
+    strict_filters: true,
+  });
+
     // copy static files to dist
     eleventyConfig.addPassthroughCopy("src/static");
 
@@ -122,7 +129,8 @@ module.exports = (eleventyConfig) => {
       "md",
       "njk",
       "html",
-      "liquid"
+          "liquid",
+      "js"
     ],
 
     // Pre-process *.md files with: (default: `liquid`)

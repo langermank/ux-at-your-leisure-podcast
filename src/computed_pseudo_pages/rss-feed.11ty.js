@@ -95,7 +95,7 @@ class TheClass {
         return `/feed.xml`;
       },
       layout: null,
-      //eleventyExcludeFromCollections: true,
+    //   eleventyExcludeFromCollections: true,
     };
   }
 
@@ -110,3 +110,4 @@ class TheClass {
 }
 
 module.exports = TheClass;
+console.log(TheClass)
