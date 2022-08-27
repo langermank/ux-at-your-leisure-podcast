@@ -101,13 +101,14 @@ class TheClass {
 
   render(data) {
     //let episodes = [{ title: "epo1x" }];
-    let episodes = data.collections.episodes.map((episode) => {
-      return episode.data;
+    let posts = data.collections.posts.map((post) => {
+      return post.data;
     });
-    addEpisodes(episodes);
+    addEpisodes(posts);
     return feed.xml({ indent: true });
+      console.log(data.collections.posts)
   }
 }
 
 module.exports = TheClass;
-console.log(TheClass)
+// console.log(TheClass)

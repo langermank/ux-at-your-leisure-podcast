@@ -10,14 +10,64 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 
 module.exports = (eleventyConfig) => {
 
-      // Make Liquid capable of rendering "partials"
-  eleventyConfig.setLiquidOptions({
-    dynamicPartials: true,
-    strict_filters: true,
-  });
-
     // copy static files to dist
     eleventyConfig.addPassthroughCopy("src/static");
+
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/open-props/normalize.min.css": "static/css/open-props/normalize.css"
+    });
+
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/open-props/animations.min.css": "static/css/open-props/animations.css"
+    });
+
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/open-props/borders.min.css": "static/css/open-props/borders.css"
+    });
+
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/open-props/buttons.min.css": "static/css/open-props/buttons.css"
+    });
+
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/open-props/colors-hsl.min.css": "static/css/open-props/colors-hsl.css"
+    });
+
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/open-props/easings.min.css": "static/css/open-props/easings.css"
+    });
+
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/open-props/fonts.min.css": "static/css/open-props/fonts.css"
+    });
+
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/open-props/gradients.min.css": "static/css/open-props/gradients.css"
+    });
+
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/open-props/media.min.css": "static/css/open-props/media.css"
+    });
+
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/open-props/shadows.min.css": "static/css/open-props/shadows.css"
+    });
+
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/open-props/sizes.min.css": "static/css/open-props/sizes.css"
+    });
+
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/open-props/borders.min.css": "static/css/open-props/borders.css"
+    });
+
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/open-props/zindex.min.css": "static/css/open-props/zindex.css"
+    });
+
+    // eleventyConfig.addPassthroughCopy({
+    //     "node_modules/open-props/src/extra/**/*.css": "static/css/open-props/"
+    // });
 
     eleventyConfig.addPlugin(pluginNavigation);
 
