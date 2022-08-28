@@ -46,7 +46,7 @@ module.exports = (eleventyConfig) => {
     });
 
     eleventyConfig.addPassthroughCopy({
-        "node_modules/open-props/media.min.css": "static/css/open-props/media.css"
+        "node_modules/open-props/media.min.css": "static/css/open-props/media-node.css"
     });
 
     eleventyConfig.addPassthroughCopy({

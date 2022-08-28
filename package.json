@@ -6,10 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx eleventy",
+    "build:css": "postcss src/static/css/index.css --no-map --dir dist/static/css",
     "dev": "npx eleventy --watch --serve",
     "develop": "npx eleventy --watch --serve",
     "now-build": "npm run build",
-    "debug": "DEBUG=* npx eleventy"
+    "debug": "DEBUG=* npx eleventy",
+    "build:sass": "sass --no-source-map src/sass/main.scss:_site/css/main.css",
+    "postbuild": "postcss dist/static/css/index.css -r --no-map"
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.1",
@@ -22,5 +25,15 @@
     "music-metadata": ">=7.8.1",
     "open-props": "^1.4.14",
     "rss": ">=1.2.2"
+  },
+  "devDependencies": {
+    "cssnano": "^5",
+    "postcss": "^8.4.16",
+    "postcss-cli": "^9.1.0",
+    "postcss-custom-media": "^8.0.2",
+    "postcss-import": "^14.0.0",
+    "postcss-jit-props": "^1.0.7",
+    "postcss-nested": "^5.0.6",
+    "postcss-preset-env": "^7.4.2"
   }
 }

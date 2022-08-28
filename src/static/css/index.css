@@ -1,42 +1,95 @@
 /* open-props */
-@import "./open-props/normalize.css";
-@import "./open-props/animations.css";
+/* @import "https://unpkg.com/open-props/open-props.min.css";
+@import "https://unpkg.com/open-props@1.4.14/media.min.css";
+@import "https://unpkg.com/open-props/src/extra/normalize.css"; */
+/* @import "open-props/postcss/media.css"; */
+@import "https://unpkg.com/open-props/open-props.min.css";
+/* @import "https://unpkg.com/open-props/media.min.css"; */
+/* @import "./open-props/media-node.css"; */
+/* @import "https://unpkg.com/open-props@1.4.14/media.min.css"; */
+/* @import "./open-props/animations.css";
 @import "./open-props/borders.css";
 @import "./open-props/colors-hsl.css";
 @import "./open-props/easings.css";
 @import "./open-props/fonts.css";
 @import "./open-props/gradients.css";
-@import "./open-props/media.css";
+
 @import "./open-props/shadows.css";
 @import "./open-props/sizes.css";
 @import "./open-props/borders.css";
 @import "./open-props/zindex.css";
 @import "./open-props/brand.css";
-@import "./open-props/buttons.css";
+@import "./open-props/buttons.css"; */
+
+
 
 /* Theme colors */
-:root {
-  --color-gray-20: #e0e0e0;
-  --color-gray-50: #C0C0C0;
-  --color-gray-90: #333;
-
-  --background-color: #fff;
-
-  --text-color: var(--color-gray-90);
-  --text-color-link: #082840;
-  --text-color-link-visited: #17050F;
+/* :root {
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-gray-20: #e0e0e0;
-    --color-gray-50: #C0C0C0;
-    --color-gray-90: #dad8d8;
+} */
 
-    /* --text-color is assigned to --color-gray-_ above */
-    --text-color-link: #1493fb;
-    --text-color-link-visited: #a6a6f8;
+/* :where(html) {
+  color-scheme: light;
 
-    --background-color: #15202b;
+  --link: var(--indigo-7);
+  --link-visited: var(--grape-7);
+
+  --text-1: var(--gray-9);
+  --text-2: var(--gray-7);
+
+  --surface-1: var(--gray-0);
+  --surface-2: var(--gray-2);
+  --surface-3: var(--gray-3);
+  --surface-4: var(--gray-4);
+
+  @media (--HDcolor) {
+    @supports (color(display-p3 0 .5 1)) {
+      --link: color(display-p3 0 .5 1);
+      --link-visited: color(display-p3 .6 .2 1);
+    }
   }
+} */
+
+
+@media (--OSdark) {
+    [find-me]p {
+        color: var(--text-1);
+    }
+  /* :where(html) {
+    color-scheme: dark;
+
+    --link: var(--indigo-3);
+    --link-visited: var(--grape-3);
+
+    --text-1: var(--gray-1);
+    --text-2: var(--gray-4);
+
+    --surface-1: var(--gray-9);
+    --surface-2: var(--gray-8);
+    --surface-3: var(--gray-7);
+    --surface-4: var(--gray-6);
+  } */
+}
+
+/* :where(html) {
+  color: var(--text-2);
+  background-color: var(--surface-1);
+}
+
+:where(h1, h2, h3, h4, h5, h6, dt) {
+  color: var(--text-1);
+}
+
+:where(a[href]) {
+  color: var(--link);
+
+  &:visited {
+    color: var(--link-visited);
+  }
+} */
+
+:focus-visible {
+  outline-color: var(--indigo-7);
 }
