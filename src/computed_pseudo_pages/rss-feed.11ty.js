@@ -1,7 +1,7 @@
 // With thanks to https://github.com/miller-productions/gatsby-plugin-podcast-feed-mdx/blob/master/src/gatsby-node.js
 
 const RSS = require("rss");
-const site = require("../_data/site");
+const site = require("../_data/metadata");
 
 const feedOptions = {
   author: site.author,

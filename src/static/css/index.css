@@ -1,6 +1,8 @@
 /* open-props */
 @import "https://unpkg.com/open-props/open-props.min.css";
 @import "./open-props/normalize.css";
+@import "./open-props/buttons.css";
+@import "./open-props/media-node.css";
 
 /* Theme colors */
 /* :root {
@@ -10,7 +12,59 @@
 } */
 
 body {
+    background: var(--surface-1);
+    font-family: var(--font-sans);
+    display: grid;
+    justify-content: center;
+    align-content: start;
+    gap: var(--size-3);
+}
+
+header {
+    padding-block-start: var(--size-8);
+}
+
+h1 {
+    font-size: var(--font-size-6);
+    font-weight: var(--font-weight-8);
+}
+
+h2 {
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-5);
+    /* max-inline-size: var(--size-header-3); */
+}
+
+.home {
+    display: grid;
+    place-content: center;
+}
+
+.header-content {
+    margin-block-end: var(--size-6);
+}
+
+.header-content h2 {
+    margin-block-end: var(--size-2);
+}
+
+.podcast-link-section {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.podcast-link {
+    display: grid;
+    grid-template-columns: var(--size-5) auto;
     background: pink;
+    white-space: nowrap;
+    align-items: center;
+    gap: 4px;
+    border-radius: var(--radius-2);
+    height: var(--size-8);
+    padding-inline: var(--size-3);
+    padding-block: 0;
 }
 
 

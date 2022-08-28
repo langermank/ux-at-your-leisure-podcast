@@ -5,18 +5,12 @@
   "main": ".eleventy.js",
   "scripts": {
     "build:css": "postcss --watch src/static/css/index.css --no-map --dir dist/static/css",
-    "dev": "npx eleventy --watch --serve",
-    "develop": "npx eleventy --watch --serve",
-    "now-build": "npm run build",
+    "build:11ty": "npx eleventy",
+    "watch:11ty": "npx eleventy --watch --serve",
     "debug": "DEBUG=* npx eleventy",
     "postbuild": "postcss dist/static/css/index.css -r --no-map",
-    "watch:eleventy": "eleventy --serve",
-    "build:eleventy": "eleventy",
-    "start": "npm-run-all --parallel watch:*",
-    "build": "npm-run-all postbuild build:eleventy",
     "clean": "rimraf ./dist",
-    "11ty": "npx eleventy",
-    "test2": "concurrently \"npm run 11ty\" \"npm run postbuild\" \"npm run develop\""
+    "dev": "concurrently \"npm run build:11ty\" \"npm run postbuild\" \"npm run watch:11ty\""
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.1",
