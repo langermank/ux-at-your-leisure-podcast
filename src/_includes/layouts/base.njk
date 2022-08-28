@@ -14,47 +14,7 @@
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
   </head>
   <body>
-    <header>
-      {# <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1> #}
-
-      {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-      {# <ul class="nav">
-      {%- for entry in collections.all | eleventyNavigation %}
-        <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
-      {%- endfor %}
-      </ul> #}
-        <div class="header-content">
-            <h1>{{ metadata.title }}</h1>
-            <h2>A UX design podcast that meets you wherever you are.</h2>
-            <p>Brought to you by Katie, Lara, and Olga.</p>
-        </div>
-
-        <div class="podcast-link-section">
-            <a class="podcast-link" href="">
-                <img src="./static/icons/rss-duotone.svg"alt="" width="24"/>
-                RSS
-            </a>
-            <a class="podcast-link" href="">
-                <img src="./static/icons/apple-podcasts-logo-duotone.svg"alt="" width="24"/>
-                Apple podcasts
-            </a>
-            <a class="podcast-link" href="">
-                <img src="./static/icons/google-podcasts-logo-duotone.svg"alt="" width="24"/>
-                Google podcasts
-            </a>
-            <a class="podcast-link" href="">
-                <img src="./static/icons/spotify-logo-duotone.svg"alt="" width="24"/>
-                Spotify
-            </a>
-        </div>
-    </header>
-
-    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
-      {{ content | safe }}
-    </main>
-
+    {{ content | safe }}
     <footer></footer>
-
-    <!-- Current page: {{ page.url | url }} -->
   </body>
 </html>

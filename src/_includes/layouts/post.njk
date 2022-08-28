@@ -2,17 +2,32 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<h1>{{ title }}</h1>
+{% include "nav.njk" %}
+<main>
+    <h1 class="episode-heading">{{ title }}</h1>
+    <div class="episode-description">
+        <p class="postlist-date">Release date: {% if page.data.episodedate %}{{ page.data.episodedate | formatDate }}{% else %}{{ page.date | postDate }}{% endif %}</p>
+        <p>{{ postDescription }}</p>
+    </div>
 
-<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-{%- for tag in tags | filterTagList %}
+{# {%- for tag in tags | filterTagList %}
 {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
 <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-{%- endfor %}
+{%- endfor %} #}
 
-{{ content | safe }}
+    <figure class="episode-mp3">
+        <audio
+            controls
+            src="{{ audio_file_relative_url }}">
+                Your browser does not support the
+                <code>audio</code> element.
+        </audio>
+        <figcaption>{{ title }}</figcaption>
+    </figure>
 
-{%- if collections.posts %}
+    {{ content | safe }}
+
+{# {%- if collections.posts %}
 {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 {%- if nextPost or previousPost %}
@@ -22,4 +37,5 @@ templateClass: tmpl-post
   {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
 </ul>
 {%- endif %}
-{%- endif %}
+{%- endif %} #}
+</main>

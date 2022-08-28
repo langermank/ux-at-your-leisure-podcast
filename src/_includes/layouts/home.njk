@@ -2,4 +2,15 @@
 layout: layouts/base.njk
 templateClass: home
 ---
-{{ content | safe }}
+
+<header>
+    <div class="header-content">
+        <h1>{{ metadata.title }}</h1>
+        <h2>A UX design podcast that meets you wherever you are.</h2>
+        <p>Brought to you by <a href="https://twitter.com/langermank">Katie</a>, <a href="https://twitter.com/lar_greenberg">Lara</a>, and <a href="https://twitter.com/olgavperfilieva">Olga</a>.</p>
+    </div>
+    {% include "podcast-links.njk" %}
+</header>
+<main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+    {{ content | safe }}
+</main>

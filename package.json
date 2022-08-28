@@ -4,6 +4,7 @@
   "description": "",
   "main": ".eleventy.js",
   "scripts": {
+    "build": "concurrently \"npm run build:11ty\" \"npm run postbuild\"",
     "build:css": "postcss --watch src/static/css/index.css --no-map --dir dist/static/css",
     "build:11ty": "npx eleventy",
     "watch:11ty": "npx eleventy --watch --serve",

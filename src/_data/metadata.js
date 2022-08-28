@@ -7,7 +7,7 @@ module.exports = {
   lang: "en-us",
   author: "Katie Langerman, Lara Greenberg, Olga Perfilieva",
   url: "https://uxatyourleisure.com",
-  email: "hello@uxatyourleisure.com",
+  email: "langermank@gmail.com",
   twitter_username: "UXAtYourLeisure",
   jekyll_site_time: new Date(),
   timezone: "United States/California",

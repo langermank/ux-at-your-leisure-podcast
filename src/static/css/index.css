@@ -11,15 +11,19 @@
 @media (prefers-color-scheme: dark) {
 } */
 
+:root {
+  --post-link: var(--yellow-2);
+  --post-link-hover: var(--yellow-3);
+}
+
 :where(html) {
   color-scheme: light;
 
   --link: var(--blue-7);
   --link-visited: var(--grape-7);
 
-  --post-link: var(--yellow-2);
-  --post-link-hover: var(--yellow-3);
   --post-link-outline: var(--gray-8);
+  --post-link-color: var(--gray-9);
 
   --text-1: var(--gray-9);
   --text-2: var(--gray-7);
@@ -48,9 +52,8 @@
     --link: var(--blue-3);
     --link-visited: var(--grape-3);
 
-    --post-link: var(--yellow-9);
-    --post-link-hover: var(--yellow-8);
     --post-link-outline: var(--gray-2);
+    --post-link-color: var(--gray-9);
 
     --text-1: var(--gray-1);
     --text-2: var(--gray-4);
@@ -95,6 +98,7 @@ color: var(--link-visited);
 body {
     font-family: var(--font-sans);
     display: grid;
+    grid-auto-columns: min(1024px, 100vw - 2rem);
     justify-content: center;
     align-content: start;
     gap: var(--size-8);
@@ -151,7 +155,7 @@ li {
     display: grid;
     grid-template-columns: var(--size-5) auto;
     background: var(--post-link);
-    color: var(--text-1);
+    color: var(--post-link-color);
     white-space: nowrap;
     align-items: center;
     gap: var(--size-2);
@@ -174,7 +178,7 @@ li {
 
 .podcast-link:focus-visible {
     outline: solid 3px var(--post-link-outline);
-    outline-offset: 0px;
+    outline-offset: 2px;
 }
 
 .postlist-content {
@@ -188,7 +192,7 @@ li {
 
 .postlist-item {
     box-shadow: var(--shadow-2);
-    background: white;
+    background: var(--surface-1);
     padding: var(--size-4);
     border-radius: var(--radius-3);
     max-inline-size: unset;
@@ -200,4 +204,49 @@ li {
 
 .postlist-date {
     font-size: var(--font-size-1);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--size-3);
+    align-items: start;
+    padding-block: var(--size-4);
+}
+
+@media (--md-n-above) {
+    nav {
+        flex-direction: row;
+    }
+}
+
+.home-link {
+    font-size: var(--font-size-4);
+    color: var(--text-1);
+}
+
+.home-link:hover {
+    text-decoration-color: var(--text-1);
+}
+
+.home-link:visited:hover {
+    text-decoration-color: var(--text-1);
+}
+
+.episode-heading {
+    margin-block-end: var(--size-6);
+}
+
+.episode-description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-3);
+    margin-block-end: var(--size-6);
+}
+
+.episode-mp3 {
+    display: flex;
+    flex-direction: column;
+    place-items: start stretch;
 }
