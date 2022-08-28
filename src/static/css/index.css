@@ -1,27 +1,6 @@
 /* open-props */
-/* @import "https://unpkg.com/open-props/open-props.min.css";
-@import "https://unpkg.com/open-props@1.4.14/media.min.css";
-@import "https://unpkg.com/open-props/src/extra/normalize.css"; */
-/* @import "open-props/postcss/media.css"; */
 @import "https://unpkg.com/open-props/open-props.min.css";
-/* @import "https://unpkg.com/open-props/media.min.css"; */
-/* @import "./open-props/media-node.css"; */
-/* @import "https://unpkg.com/open-props@1.4.14/media.min.css"; */
-/* @import "./open-props/animations.css";
-@import "./open-props/borders.css";
-@import "./open-props/colors-hsl.css";
-@import "./open-props/easings.css";
-@import "./open-props/fonts.css";
-@import "./open-props/gradients.css";
-
-@import "./open-props/shadows.css";
-@import "./open-props/sizes.css";
-@import "./open-props/borders.css";
-@import "./open-props/zindex.css";
-@import "./open-props/brand.css";
-@import "./open-props/buttons.css"; */
-
-
+@import "./open-props/normalize.css";
 
 /* Theme colors */
 /* :root {
@@ -30,7 +9,12 @@
 @media (prefers-color-scheme: dark) {
 } */
 
-/* :where(html) {
+body {
+    background: pink;
+}
+
+
+:where(html) {
   color-scheme: light;
 
   --link: var(--indigo-7);
@@ -50,14 +34,14 @@
       --link-visited: color(display-p3 .6 .2 1);
     }
   }
-} */
+}
 
 
 @media (--OSdark) {
     [find-me]p {
         color: var(--text-1);
     }
-  /* :where(html) {
+  :where(html) {
     color-scheme: dark;
 
     --link: var(--indigo-3);
@@ -70,10 +54,10 @@
     --surface-2: var(--gray-8);
     --surface-3: var(--gray-7);
     --surface-4: var(--gray-6);
-  } */
+  }
 }
 
-/* :where(html) {
+:where(html) {
   color: var(--text-2);
   background-color: var(--surface-1);
 }
@@ -88,7 +72,7 @@
   &:visited {
     color: var(--link-visited);
   }
-} */
+}
 
 :focus-visible {
   outline-color: var(--indigo-7);

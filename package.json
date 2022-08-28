@@ -4,20 +4,25 @@
   "description": "",
   "main": ".eleventy.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx eleventy",
-    "build:css": "postcss src/static/css/index.css --no-map --dir dist/static/css",
+    "build:css": "postcss --watch src/static/css/index.css --no-map --dir dist/static/css",
     "dev": "npx eleventy --watch --serve",
     "develop": "npx eleventy --watch --serve",
     "now-build": "npm run build",
     "debug": "DEBUG=* npx eleventy",
-    "build:sass": "sass --no-source-map src/sass/main.scss:_site/css/main.css",
-    "postbuild": "postcss dist/static/css/index.css -r --no-map"
+    "postbuild": "postcss dist/static/css/index.css -r --no-map",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "eleventy",
+    "start": "npm-run-all --parallel watch:*",
+    "build": "npm-run-all postbuild build:eleventy",
+    "clean": "rimraf ./dist",
+    "11ty": "npx eleventy",
+    "test2": "concurrently \"npm run 11ty\" \"npm run postbuild\" \"npm run develop\""
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-navigation": "^0.3.3",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "concurrently": "^7.3.0",
     "eleventy-xml-plugin": ">=0.1.0",
     "js-yaml": ">=4.0.0",
     "markdown-it": "^13.0.1",
@@ -28,6 +33,7 @@
   },
   "devDependencies": {
     "cssnano": "^5",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.16",
     "postcss-cli": "^9.1.0",
     "postcss-custom-media": "^8.0.2",

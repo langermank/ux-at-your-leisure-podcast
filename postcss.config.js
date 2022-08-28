@@ -18,7 +18,8 @@ module.exports = {
             // debug: true,
             stage: 0,
             browsers: 'last 2 versions',
-            importFrom: './dist/static/css/open-props/media-node.css',
+            importFrom: [
+                './dist/static/css/open-props/media-node.css']
             // insertAfter: {
             //     'nesting-rules': cssnano
             // }
