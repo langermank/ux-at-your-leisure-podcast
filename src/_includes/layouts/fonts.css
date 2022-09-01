@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Mezzotint Italic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Mezzotint Italic"), local("Mezzotint Italic"),
+    url("/static/fonts/MezzotintCF-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Mezzotint Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Mezzotint Regular"), local("Mezzotint Regular"),
+    url("/static/fonts/MezzotintCF-Regular.woff2") format("woff2");
+}

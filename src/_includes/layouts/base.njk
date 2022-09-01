@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
+    {# {% include "podcast-links.njk" %} #}
+    {% set fontCss %}
+        {% include "./fonts.css" %}
+    {% endset %}
+    <style>{{ fontCss | cssmin | safe }}</style>
 
     {#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
     {#- <meta name="generator" content="{{ eleventy.generator }}"> #}

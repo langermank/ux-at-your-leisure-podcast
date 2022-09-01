@@ -8,7 +8,15 @@ const markdownItAnchor = require("markdown-it-anchor");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 
+const CleanCSS = require("clean-css");
+
 module.exports = (eleventyConfig) => {
+
+    eleventyConfig.addFilter("cssmin", function(code) {
+        return new CleanCSS({}).minify(code).styles;
+    });
+
+    eleventyConfig.addFilter('values', Object.values);
 
     // copy static files to dist
     eleventyConfig.addPassthroughCopy("src/static");
