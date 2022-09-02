@@ -1,26 +1,49 @@
-<!doctype html>
-<html lang="{{ metadata.language }}">
+<!DOCTYPE html>
+<html lang="{{ metadata.lang }}">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title or metadata.title }}</title>
-    <meta name="description" content="{{ description or metadata.description }}">
-    {# {% include "podcast-links.njk" %} #}
-    {% set fontCss %}
-        {% include "./fonts.css" %}
-    {% endset %}
-    <style>{{ fontCss | cssmin | safe }}</style>
+    <meta
+      name="description"
+      content="{{ description or metadata.description }}"
+    />
+    {# {% include "podcast-links.njk" %} #} {% set fontCss %} {% include
+    "./fonts.css" %} {% endset %}
+    <style>
+      {{ fontCss | cssmin | safe }}
+    </style>
 
-    {#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
-    {#- <meta name="generator" content="{{ eleventy.generator }}"> #}
+    {#- Uncomment this if you’d like folks to know that you used Eleventy to
+    build your site! #} {#-
+    <meta name="generator" content="{{ eleventy.generator }}" />
+    #}
 
-    <link rel="stylesheet" href="{{ '../../static/css/index.css' | url }}">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
-    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
-    <link type="application/rss+xml" rel="alternate" title="UX At Your Leisure Podcast" href="/feed.xml"/>
+    <link rel="stylesheet" href="{{ '../../static/css/index.css' | url }}" />
+    <link
+      rel="alternate"
+      href="{{ metadata.feed.path | url }}"
+      type="application/atom+xml"
+      title="{{ metadata.title }}"
+    />
+    <link
+      rel="alternate"
+      href="{{ metadata.jsonfeed.path | url }}"
+      type="application/json"
+      title="{{ metadata.title }}"
+    />
+    <link
+      type="application/rss+xml"
+      rel="alternate"
+      title="UX At Your Leisure Podcast"
+      href="/feed.xml"
+    />
   </head>
   <body>
     {{ content | safe }}
-    <footer></footer>
+    <footer>
+      <a href="/colophon">Colophon</a>
+      <p class="">&copy; {% year %} {{ metadata.title }}</p>
+    </footer>
   </body>
 </html>

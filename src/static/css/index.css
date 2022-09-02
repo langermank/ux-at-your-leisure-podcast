@@ -113,6 +113,7 @@ h1 {
     font-size: var(--font-size-7);
     font-weight: var(--font-weight-8);
     font-family: "Mezzotint Italic";
+    font-feature-settings: "dlig";
 }
 
 h2 {
@@ -250,4 +251,28 @@ nav {
     display: flex;
     flex-direction: column;
     place-items: start stretch;
+}
+
+ol {
+  list-style: none;
+  counter-reset: nice-numbers;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30ch, auto));
+  grid-gap: 1rem 1.5rem;
+  padding: 0;
+}
+
+ol li {
+  counter-increment: nice-numbers;
+  margin-bottom: 0.5rem;
+  font-size: clamp(1rem, 4vw, 1.25rem);
+}
+
+ol li:before {
+  content: "0" counter(nice-numbers);
+  font-weight: var(--lora-bold);
+  font-size: 3rem;
+  margin-right: 0.5rem;
+  font-family: "Mezzotint Regular";
+  line-height: 1;
 }
