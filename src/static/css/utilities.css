@@ -26,9 +26,20 @@
 
 .fade-up-and-in {
   opacity: 0;
-  animation:
-    var(--animation-fade-in) forwards,
+  animation: var(--animation-fade-in) forwards,
     var(--animation-slide-up) forwards;
-  animation-delay: .3s, 0s;
-  animation-duration: .7s, 1s;
+  animation-delay: 0.3s, 0s;
+  animation-duration: 0.7s, 1s;
+}
+
+.stack-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-3);
+}
+
+.stack-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-3);
 }

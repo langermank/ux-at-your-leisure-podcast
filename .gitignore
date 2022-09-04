@@ -11,8 +11,7 @@
 /.netlify/**
 
 # Ignore "node_modules"
-/node_modules/
-/node_modules/**
+**/node_modules/**
 
 # Ignore "dist", my static output folder
 /dist/

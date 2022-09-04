@@ -39,11 +39,11 @@
       href="/feed.xml"
     />
   </head>
-  <body>
+  <body class="site-grid">
     {{ content | safe }}
-    <footer>
+    <footer class="stack-wrap">
+      <p>{{ metadata.title }} &copy; {% year %}</p>
       <a href="/colophon">Colophon</a>
-      <p class="">&copy; {% year %} {{ metadata.title }}</p>
     </footer>
   </body>
 </html>

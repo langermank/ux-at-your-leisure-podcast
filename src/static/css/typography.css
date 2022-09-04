@@ -1,0 +1,41 @@
+:root {
+  --brand-font-family-italic: 'Mezzotint Italic';
+  --brand-font-family-regular: 'Mezzotint Regular';
+  --brand-font-feature-settings: 'dlig';
+}
+
+h1 {
+  font-size: var(--font-size-fluid-3);
+  font-family: 'Mezzotint Italic';
+  font-feature-settings: 'dlig';
+  line-height: var(--font-lineheight-0);
+  text-transform: lowercase;
+  letter-spacing: -0.0125em;
+}
+
+h2 {
+  font-size: var(--font-size-fluid-2);
+  font-weight: var(--font-weight-7);
+}
+
+h3 {
+  font-size: var(--font-size-fluid-1);
+  font-weight: var(--font-weight-5);
+}
+
+h4 {
+  font-size: var(--font-size-fluid-1);
+  font-weight: var(--font-weight-7);
+}
+
+.body-large {
+  font-size: var(--font-size-fluid-1);
+}
+
+.body-small {
+  font-size: var(--font-size-1);
+}
+
+p {
+  font-size: var(--font-size-3);
+}

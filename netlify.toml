@@ -6,3 +6,5 @@
   base = "./"
   command = "npm run dev"
   publish = "dist"
+[[plugins]]
+package = "netlify-plugin-subfont"

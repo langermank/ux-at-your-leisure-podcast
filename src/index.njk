@@ -5,11 +5,12 @@ eleventyNavigation:
   order: 1
 ---
 
-{# <p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p> #}
-
-{% set maxPosts = collections.posts.length | min(3) %}
+{#
+<p
+  >More posts can be found in
+  <a href="{{ '/posts/' | url }}">the archive</a>.</p
+>
+#} {% set maxPosts = collections.posts.length | min(3) %}
 <h2>Episodes</h2>
-
-{% set postslist = collections.posts | head(-3) %}
-{% set postslistCounter = collections.posts | length %}
-{% include "postslist.njk" %}
+{% set postslist = collections.posts | head(-3) %} {% set postslistCounter =
+collections.posts | length %} {% include "postslist.njk" %}
