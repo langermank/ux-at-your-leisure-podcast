@@ -2,18 +2,20 @@
   font-family: 'Mezzotint Italic';
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: local('Mezzotint Italic'), local('Mezzotint Italic'),
     url('/static/fonts/MezzotintCF-Italic.woff2') format('woff2');
+  unicode-range: U+000-5FF;
 }
 
 @font-face {
   font-family: 'Mezzotint Regular';
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: local('Mezzotint Regular'), local('Mezzotint Regular'),
     url('/static/fonts/MezzotintCF-Regular.woff2') format('woff2');
+  unicode-range: U+000-5FF;
 }
 
 @font-face {
