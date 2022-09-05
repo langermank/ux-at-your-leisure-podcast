@@ -1,93 +1,96 @@
 /* open-props */
-@import 'https://unpkg.com/open-props/open-props.min.css';
-@import './open-props/normalize.css';
-@import './open-props/buttons.css';
-@import './typography.css';
-@import './layout.css';
-@import './utilities.css';
-@import './components.css';
+@import 'https://unpkg.com/open-props/open-props.min.css' layer(open-props);
+@import './open-props/normalize.css' layer(open-props);
+@import './utilities.css' layer(open-props);
+@import './typography.css' layer(brand);
+@import './layout.css' layer(brand);
+@import './components.css' layer(brand);
 
-:root {
-  --post-link: var(--yellow-2);
-  --post-link-hover: var(--yellow-3);
-}
+@layer open-props, core, brand;
 
-:where(html) {
-  color-scheme: light;
+@layer brand {
+  :root {
+    --post-link: var(--yellow-2);
+    --post-link-hover: var(--yellow-3);
+  }
 
-  --link: var(--blue-7);
-  --link-visited: var(--blue-7);
-
-  --post-link-outline: var(--gray-8);
-  --post-link-color: var(--gray-9);
-
-  --text-1: var(--gray-9);
-  --text-2: var(--gray-7);
-
-  --surface-1: var(--gray-0);
-  --surface-2: var(--gray-2);
-  --surface-3: var(--gray-3);
-  --surface-4: var(--gray-4);
-}
-
-@media (prefers-color-scheme: dark) {
   :where(html) {
-    color-scheme: dark;
+    color-scheme: light;
 
-    --link: var(--blue-3);
-    --link-visited: var(--blue-3);
+    --link: var(--blue-7);
+    --link-visited: var(--blue-7);
 
-    --post-link-outline: var(--gray-2);
+    --post-link-outline: var(--gray-8);
     --post-link-color: var(--gray-9);
 
-    --text-1: var(--gray-1);
-    --text-2: var(--gray-4);
+    --text-1: var(--gray-9);
+    --text-2: var(--gray-7);
 
-    --surface-1: var(--gray-9);
-    --surface-2: var(--gray-8);
-    --surface-3: var(--gray-7);
-    --surface-4: var(--gray-6);
+    --surface-1: var(--gray-0);
+    --surface-2: var(--gray-2);
+    --surface-3: var(--gray-3);
+    --surface-4: var(--gray-4);
   }
-}
 
-:where(html) {
-  color: var(--text-2);
-  background-color: var(--surface-1);
-}
+  @media (prefers-color-scheme: dark) {
+    :where(html) {
+      color-scheme: dark;
 
-:where(h1, h2, h3, h4, h5, h6, dt) {
-  color: var(--text-1);
-}
+      --link: var(--blue-3);
+      --link-visited: var(--blue-3);
 
-:where(a[href]) {
-  color: var(--link);
-}
+      --post-link-outline: var(--gray-2);
+      --post-link-color: var(--gray-9);
 
-:where(a):where([href]) {
-  text-decoration-color: var(--link);
-}
+      --text-1: var(--gray-1);
+      --text-2: var(--gray-4);
 
-:where(a[href]):visited {
-  color: var(--link-visited);
-}
+      --surface-1: var(--gray-9);
+      --surface-2: var(--gray-8);
+      --surface-3: var(--gray-7);
+      --surface-4: var(--gray-6);
+    }
+  }
 
-:where(a):where([href]):where(:visited) {
-  text-decoration-color: var(--link-visited);
-}
+  :where(html) {
+    color: var(--text-2);
+    background-color: var(--surface-1);
+  }
 
-:focus-visible {
-  outline-color: var(--indigo-7);
-}
+  :where(h1, h2, h3, h4, h5, h6, dt) {
+    color: var(--text-1);
+  }
 
-body {
-  font-family: var(--font-sans);
-}
+  :where(a[href]) {
+    color: var(--link);
+  }
 
-ul {
-  padding: 0;
-}
+  :where(a):where([href]) {
+    text-decoration-color: var(--link);
+  }
 
-li {
-  padding: 0;
-  list-style: none;
+  :where(a[href]):visited {
+    color: var(--link-visited);
+  }
+
+  :where(a):where([href]):where(:visited) {
+    text-decoration-color: var(--link-visited);
+  }
+
+  :focus-visible {
+    outline-color: var(--indigo-7);
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    padding: 0;
+    list-style: none;
+  }
 }

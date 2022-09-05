@@ -5,32 +5,33 @@
 }
 
 h1 {
-  font-size: var(--font-size-fluid-3);
   font-family: 'Mezzotint Italic', fallback-font;
   font-feature-settings: 'dlig';
-  line-height: var(--font-lineheight-0);
   text-transform: lowercase;
   letter-spacing: -0.0125em;
   max-inline-size: unset;
+  font-size: var(--font-size-8);
+  line-height: var(--font-lineheight-0);
+  margin-block-end: var(--size-7);
 }
 
 h2 {
-  font-size: var(--font-size-fluid-2);
+  font-size: var(--font-size-6);
   font-weight: var(--font-weight-7);
 }
 
 h3 {
-  font-size: var(--font-size-fluid-1);
+  font-size: var(--font-size-4);
   font-weight: var(--font-weight-5);
 }
 
 h4 {
-  font-size: var(--font-size-fluid-1);
+  font-size: var(--font-size-4);
   font-weight: var(--font-weight-7);
 }
 
 .body-large {
-  font-size: var(--font-size-fluid-1);
+  font-size: var(--font-size-4);
 }
 
 .body-small {

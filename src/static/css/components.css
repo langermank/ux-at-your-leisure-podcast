@@ -11,6 +11,7 @@
   padding-inline: var(--size-3);
   padding-block: 0;
   font-weight: var(--font-weight-6);
+  margin: 0;
 }
 
 .podcast-link:hover {

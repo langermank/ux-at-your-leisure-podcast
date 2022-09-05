@@ -7,11 +7,13 @@ const postcssPresetEnv = require('postcss-preset-env')
 const postcssNested = require('postcss-nested')
 // const postcssCustomMedia = require('postcss-custom-media');
 const atImport = require('postcss-import')
+const postcssMixins = require('postcss-mixins')
 
 module.exports = {
   plugins: [
     postcssJitProps(OpenProps),
     postcssLogical,
+    postcssMixins,
     cssnano,
     autoprefixer,
     postcssPresetEnv({
