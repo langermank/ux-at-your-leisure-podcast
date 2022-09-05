@@ -17,8 +17,8 @@
   :where(html) {
     color-scheme: light;
 
-    --link: var(--blue-7);
-    --link-visited: var(--blue-7);
+    --link: var(--blue-8);
+    --link-visited: var(--blue-8);
 
     --post-link-outline: var(--gray-8);
     --post-link-color: var(--gray-9);

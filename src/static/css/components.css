@@ -14,6 +14,11 @@
   margin: 0;
 }
 
+.podcast-link svg {
+  stroke: unset;
+  fill: initial;
+}
+
 .podcast-link:hover {
   background: var(--post-link-hover);
   text-decoration: none;

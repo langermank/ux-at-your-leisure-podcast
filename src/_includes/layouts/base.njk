@@ -8,8 +8,7 @@
       name="description"
       content="{{ description or metadata.description }}"
     />
-    {# {% include "podcast-links.njk" %} #} {% set fontCss %} {% include
-    "./fonts.css" %} {% endset %}
+    {% set fontCss %} {% include "./fonts.css" %} {% endset %}
     <style>
       {{ fontCss | cssmin | safe }}
     </style>

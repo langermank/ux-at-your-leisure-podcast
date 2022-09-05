@@ -5,9 +5,12 @@ const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const pluginNavigation = require('@11ty/eleventy-navigation')
 
+const svgContents = require('eleventy-plugin-svg-contents')
 const CleanCSS = require('clean-css')
 
 module.exports = (eleventyConfig) => {
+  eleventyConfig.addPlugin(svgContents)
+
   eleventyConfig.addFilter('cssmin', function (code) {
     return new CleanCSS({}).minify(code).styles
   })

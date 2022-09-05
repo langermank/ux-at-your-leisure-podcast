@@ -1,17 +1,15 @@
 <div class="stack-wrap">
   <a class="podcast-link" href="/feed.xml">
-    <img src="/static/icons/rss-duotone.svg" alt="" width="24" />
+    {{ '/src/static/icons/rss-duotone.svg' | svgContents | safe }}
     RSS
   </a>
   <a
     class="podcast-link"
     href="https://podcasts.apple.com/us/podcast/ux-at-your-leisure-podcast/id1639787989"
   >
-    <img
-      src="/static/icons/apple-podcasts-logo-duotone.svg"
-      alt=""
-      width="24"
-    />
+    {{
+      '/src/static/icons/apple-podcasts-logo-duotone.svg' | svgContents | safe
+    }}
     Apple podcasts
   </a>
   <a
@@ -19,18 +17,16 @@
     href="https://www.google.com/podcasts?feed=aHR0cHM6Ly91eGF0eW91cmxlaXN1cmUuY29tL2ZlZWQueG1s
 "
   >
-    <img
-      src="/static/icons/google-podcasts-logo-duotone.svg"
-      alt=""
-      width="24"
-    />
+    {{
+      '/src/static/icons/google-podcasts-logo-duotone.svg' | svgContents | safe
+    }}
     Google podcasts
   </a>
   <a
     class="podcast-link"
     href="https://open.spotify.com/show/25i2zCAvEZNOP5vr4QasMw"
   >
-    <img src="/static/icons/spotify-logo-duotone.svg" alt="" width="24" />
+    {{ '/src/static/icons/spotify-logo-duotone.svg' | svgContents | safe }}
     Spotify
   </a>
 </div>
