@@ -15,7 +15,6 @@
 }
 
 header {
-  padding-block-start: var(--size-8);
   padding-block-start: clamp(var(--size-6), 4vw, var(--size-8));
   display: flex;
   flex-direction: column;
@@ -44,6 +43,10 @@ nav > a:not([class]) {
   & :hover {
     text-decoration-color: var(--text-1);
   }
+}
+
+footer {
+  padding-block-end: var(--size-4);
 }
 
 footer > * {

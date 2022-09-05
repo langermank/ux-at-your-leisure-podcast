@@ -2,18 +2,10 @@
 @import 'https://unpkg.com/open-props/open-props.min.css';
 @import './open-props/normalize.css';
 @import './open-props/buttons.css';
-@import './open-props/media-node.css';
 @import './typography.css';
 @import './layout.css';
 @import './utilities.css';
 @import './components.css';
-
-/* Theme colors */
-/* :root {
-}
-
-@media (prefers-color-scheme: dark) {
-} */
 
 :root {
   --post-link: var(--yellow-2);

@@ -19,6 +19,10 @@
   box-shadow: var(--shadow-2);
 }
 
+.podcast-link:visited {
+  color: var(--post-link-color);
+}
+
 .podcast-link:active {
   box-shadow: var(--inner-shadow-1);
 }
@@ -42,7 +46,7 @@
   background: var(--surface-1);
   padding: var(--size-4);
   border-radius: var(--radius-3);
-  max-inline-size: unset;
+  border: solid 1px var(--yellow-2);
 }
 
 .postlist-link {
@@ -52,23 +56,17 @@
 ol {
   list-style: none;
   counter-reset: nice-numbers;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30ch, auto));
-  grid-gap: 1rem 1.5rem;
   padding: 0;
 }
 
 ol li {
   counter-increment: nice-numbers;
-  margin-bottom: 0.5rem;
-  font-size: clamp(1rem, 4vw, 1.25rem);
+  font-size: clamp(var(--size-3), 4vw, var(--size-4));
 }
 
 ol li:before {
   content: '0' counter(nice-numbers);
-  font-weight: var(--lora-bold);
-  font-size: 3rem;
-  margin-right: 0.5rem;
+  font-size: var(--font-size-7);
   font-family: 'Mezzotint Regular';
-  line-height: 1;
+  line-height: var(--font-lineheight-0);
 }
