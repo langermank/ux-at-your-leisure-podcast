@@ -1,15 +1,21 @@
 <ol class="postlist">
-{% for post in postslist | reverse %}
+  {% for post in postslist | reverse %}
   <li class="postlist-item">
     <div class="postlist-content">
-        <a href="{{ post.url | url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-        <p>{{ post.data.summary }}</p>
+      <a href="{{ post.url | url }}" class="postlist-link"
+        >{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{
+          post.url
+        }}</code
+        >{% endif %}</a
+      >
+      <p>{{ post.data.summary }}</p>
     </div>
-    <p class="postlist-date">{% if page.data.episodedate %}{{ page.data.episodedate | formatDate }}{% else %}{{ page.date | postDate }}{% endif %}</p>
-    {# {% for tag in post.data.tags | filterTagList %}
-      {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-      <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+    <p class="postlist-date">{{ post.data.date | formatDate }}</p>
+    {# {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{
+      tag | slugify
+    }}/{% endset %}
+    <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
     {% endfor %} #}
   </li>
-{% endfor %}
+  {% endfor %}
 </ol>
