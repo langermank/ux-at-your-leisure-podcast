@@ -12,12 +12,21 @@
     <style>
       {{ fontCss | cssmin | safe }}
     </style>
-
-    {#- Uncomment this if you’d like folks to know that you used Eleventy to
-    build your site! #} {#-
     <meta name="generator" content="{{ eleventy.generator }}" />
-    #}
-
+    <link
+      rel="preload"
+      href="../../static/fonts/MezzotintCF-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="../../static/fonts/MezzotintCF-Italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="{{ '../../static/css/index.css' | url }}" />
     <link rel="icon" href="{{ '../../static/images/favicon.png' | url }}" />
     <link
