@@ -13,6 +13,12 @@
       {{ fontCss | cssmin | safe }}
     </style>
     <meta name="generator" content="{{ eleventy.generator }}" />
+    <meta name="twitter:card" content="../../static/images/twitter.png" />
+    {% if meta.twitter_username %}
+    <meta name="twitter:creator" content="@{{ meta.twitter_username }}" />
+    {% endif %}
+    <meta name="twitter:title" content="{{ title or metadata.title }}" />
+    <meta name="twitter:description" content="{{ metadata.description }}" />
     <link
       rel="preload"
       href="../../static/fonts/MezzotintCF-Regular.woff2"
