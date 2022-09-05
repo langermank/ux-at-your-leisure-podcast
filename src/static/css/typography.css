@@ -6,11 +6,12 @@
 
 h1 {
   font-size: var(--font-size-fluid-3);
-  font-family: 'Mezzotint Italic';
+  font-family: 'Mezzotint Italic', fallback-font;
   font-feature-settings: 'dlig';
   line-height: var(--font-lineheight-0);
   text-transform: lowercase;
   letter-spacing: -0.0125em;
+  max-inline-size: unset;
 }
 
 h2 {

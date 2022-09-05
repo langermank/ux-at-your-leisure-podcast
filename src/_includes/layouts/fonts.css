@@ -2,7 +2,7 @@
   font-family: 'Mezzotint Italic';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: local('Mezzotint Italic'), local('Mezzotint Italic'),
     url('/static/fonts/MezzotintCF-Italic.woff2') format('woff2');
 }
@@ -11,16 +11,13 @@
   font-family: 'Mezzotint Regular';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: local('Mezzotint Regular'), local('Mezzotint Regular'),
     url('/static/fonts/MezzotintCF-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: fallback-font;
-  src: local(Arial); /* required! */
-  advance-override: 1570;
-  ascent-override: 1230;
-  descent-override: -275;
-  line-gap-override: 275;
+  src: local(Arial);
+  font-weight: 900;
 }
