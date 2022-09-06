@@ -19,6 +19,10 @@
     {% endif %}
     <meta name="twitter:title" content="{{ title or metadata.title }}" />
     <meta name="twitter:description" content="{{ metadata.description }}" />
+    <meta name="og:title" content="{{ title or metadata.title }}" />
+    <meta name="og:description" content="{{ metadata.description }}" />
+    <meta property="og:image" content="../../static/images/twitter.png" />
+    <meta name="twitter:image" content="../../static/images/twitter.png" />
     <link
       rel="preload"
       href="../../static/fonts/MezzotintCF-Regular.woff2"
