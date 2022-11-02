@@ -13,7 +13,7 @@ eleventyComputed:
       <p class="body-small">Episode: {{ episode_number }}</p>
       <p class="body-small">Released: {{ date | formatDate }}</p>
     </div>
-    <p>{{ postDescription }}</p>
+    <p>{{ postDescription | safe }}</p>
   </div>
 
   <figure class="episode-mp3">
